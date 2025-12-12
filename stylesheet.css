@@ -183,6 +183,14 @@ body {
     height: 280px;
 }
 
+.portfolio-col {
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.portfolio-col.hide {
+    display: none;
+}
+
 /* ===========================
    Contact section
    =========================== */
