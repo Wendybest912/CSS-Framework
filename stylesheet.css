@@ -1,20 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 
 /* ===========================
-   Variables de couleurs
+   Colors variables
    =========================== */
 :root {
     --primary-orange: #FD6F00;
     --darker-bg: #121212;
     --card-bg: #242424;
-    --text-gray: #b0b0b0;
+    --text-gray: #959595;
 }
 
 /* ===========================
-   Styles généraux
+   Global style
    =========================== */
 body {
-    font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Lato';
     background: var(--darker-bg);
     color: #fff;
 }
@@ -38,11 +38,11 @@ body {
 }
 
 /* ===========================
-   Boutons
+   Button
    =========================== */
 .btn-hire {
     background-color: var(--primary-orange);
-    color: #fff;
+    color: white;
     border: none;
     transition: all 0.3s;
 }
@@ -65,8 +65,33 @@ body {
     color: var(--primary-orange);
 }
 
+.filter-btn {
+    background: var(--card-bg);
+    color: white;
+    border: none;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: var(--primary-orange);
+}
+
+.btn-send {
+    background: transparent;
+    color: var(--text-gray);
+    border: 1px solid var(--text-gray);
+    transition: all 0.3s;
+}
+
+.btn-send:hover {
+    border-color: var(--primary-orange);
+    color: var(--primary-orange);
+}
+
 /* ===========================
-   Hero Section
+   Hero section
    =========================== */
 .hero-section {
     background: var(--darker-bg);
@@ -78,14 +103,14 @@ body {
 }
 
 /* ===========================
-   Icônes sociales
+   Social Icons
    =========================== */
 .social-icon {
     width: 40px;
     height: 40px;
-    border: 2px solid #fff;
+    border: 2px solid white;
     display: inline-flex;
-    color: #fff;
+    color: white;
     text-decoration: none;
     transition: all 0.3s;
 }
@@ -93,11 +118,11 @@ body {
 .social-icon:hover {
     background-color: var(--primary-orange);
     border-color: var(--primary-orange);
-    color: #fff;
+    color: white;
 }
 
 /* ===========================
-   Stats Cards
+   Stats cards
    =========================== */
 .stats-card {
     background-color: var(--card-bg);
@@ -110,7 +135,7 @@ body {
 }
 
 /* ===========================
-   Skills Circles
+   Skills circles
    =========================== */
 .skill-circle {
     width: 120px;
@@ -125,39 +150,27 @@ body {
     color: var(--primary-orange);
 }
 
-.skill-circle[data-percent="85"] {
+.skill-circle[data-percent="50"] {
     border-top-color: transparent;
     border-left-color: transparent;
 }
 
-.skill-circle[data-percent="60"] {
+.skill-circle[data-percent="25"] {
     border-top-color: transparent;
     border-left-color: transparent;
     border-bottom-color: transparent;
 }
 
-.skill-circle[data-percent="70"] {
+.skill-circle[data-percent="75"] {
     border-top-color: transparent;
 }
 
 /* ===========================
-   Portfolio Section
+   Portfolio section
    =========================== */
-.filter-btn {
-    background: #2a2a2a;
-    color: #fff;
-    border: none;
-    transition: all 0.3s;
-    cursor: pointer;
-}
-
-.filter-btn.active,
-.filter-btn:hover {
-    background: var(--primary-orange);
-}
 
 .portfolio-item {
-    background: #1a1a1a;
+    background: var(--card-bg);
     transition: transform 0.3s;
     cursor: pointer;
 }
@@ -166,25 +179,12 @@ body {
     transform: translateY(-10px);
 }
 
-.portfolio-col {
-    transition: opacity 0.3s, transform 0.3s;
-}
-
-.portfolio-col.hide {
-    display: none;
-}
-
 .portfolio-preview {
     height: 280px;
-    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
-}
-
-.portfolio-preview img {
-    opacity: 0.9;
 }
 
 /* ===========================
-   Formulaire de contact
+   Contact section
    =========================== */
 .form-control,
 .form-select {
@@ -195,9 +195,9 @@ body {
 
 .form-control:focus,
 .form-select:focus {
-    background: #1a1a1a;
+    background: var(--card-bg);
     border-color: var(--primary-orange);
-    color: #fff;
+    color: white;
     box-shadow: none;
 }
 
@@ -208,18 +208,6 @@ body {
 .form-select option {
     background: var(--darker-bg);
     color: var(--text-gray);
-}
-
-.btn-send {
-    background: transparent;
-    color: var(--text-gray);
-    border: 1px solid var(--text-gray);
-    transition: all 0.3s;
-}
-
-.btn-send:hover {
-    border-color: var(--primary-orange);
-    color: var(--primary-orange);
 }
 
 /* ===========================
