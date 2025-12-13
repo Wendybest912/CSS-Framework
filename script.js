@@ -48,3 +48,80 @@ document.querySelectorAll('.filter-btn').forEach(button => {
         });
     });
 });
+
+
+// ===========================
+// Validation du Formulaire de Contact
+// ===========================
+(function() {
+    'use strict';
+
+    const form = document.getElementById('contactForm');
+    
+    if (form) {
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            // Validation personnalisée pour le téléphone
+            const telInput = document.getElementById('phone');
+            const telRegex = /^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/;
+            
+            if (telInput && !telRegex.test(telInput.value)) {
+                telInput.setCustomValidity('Veuillez entrer un numéro de téléphone valide (format français).');
+            } else if (telInput) {
+                telInput.setCustomValidity('');
+            }
+
+            // Vérifier la validité du formulaire
+            if (!form.checkValidity()) {
+                form.classList.add('was-validated');
+            } else {
+                // Formulaire valide
+                form.classList.add('was-validated');
+                
+                // Message de succès
+                const successMessage = document.createElement('div');
+                successMessage.className = 'alert alert-success mt-3';
+                successMessage.innerHTML = '<strong>Thank you!</strong> Your message has been sent successfully. I will get back to you soon.';
+                
+                form.parentNode.insertBefore(successMessage, form.nextSibling);
+                
+                // Réinitialiser le formulaire
+                form.reset();
+                form.classList.remove('was-validated');
+                
+                // Retirer le message après 5 secondes
+                setTimeout(() => {
+                    successMessage.remove();
+                }, 5000);
+            }
+        });
+
+        // Validation en temps réel
+        const inputs = form.querySelectorAll('input, textarea, select');
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                if (this.checkValidity()) {
+                    this.classList.remove('is-invalid');
+                    this.classList.add('is-valid');
+                } else {
+                    this.classList.remove('is-valid');
+                    this.classList.add('is-invalid');
+                }
+            });
+
+            input.addEventListener('input', function() {
+                if (form.classList.contains('was-validated')) {
+                    if (this.checkValidity()) {
+                        this.classList.remove('is-invalid');
+                        this.classList.add('is-valid');
+                    } else {
+                        this.classList.remove('is-valid');
+                        this.classList.add('is-invalid');
+                    }
+                }
+            });
+        });
+    }
+})();
