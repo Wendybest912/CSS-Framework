@@ -1,10 +1,16 @@
 // ===========================
-// Smooth Scroll pour les ancres
+// Smooth Scroll
 // ===========================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+
+        // Prevent the default scroll
         e.preventDefault();
+
+        // Get the target element based on the link href
         const target = document.querySelector(this.getAttribute('href'));
+
+        // Scroll smoothly to the target section if it exists
         if (target) {
             target.scrollIntoView({ 
                 behavior: 'smooth' 
@@ -14,31 +20,31 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ===========================
-// Filtrage du Portfolio
+// Portfolio sort
 // ===========================
 document.querySelectorAll('.filter-btn').forEach(button => {
     button.addEventListener('click', function() {
-        // Retirer la classe active de tous les boutons
+        // Remove the active class from all filter buttons
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.classList.remove('active');
         });
         
-        // Ajouter la classe active au bouton cliqué
+        // Add the active class to the clicked button
         this.classList.add('active');
         
-        // Récupérer la valeur du filtre
+        // filter value
         const filterValue = this.getAttribute('data-filter');
         
-        // Récupérer tous les éléments du portfolio
+        // get all items in the portfolio
         const portfolioItems = document.querySelectorAll('.portfolio-col');
         
-        // Filtrer les éléments
+        // items sort
         portfolioItems.forEach(item => {
             if (filterValue === 'all') {
-                // Afficher tous les éléments
+                // display items
                 item.classList.remove('hide');
             } else {
-                // Afficher uniquement les éléments correspondants
+                // display desired items 
                 if (item.getAttribute('data-category') === filterValue) {
                     item.classList.remove('hide');
                 } else {
@@ -51,56 +57,60 @@ document.querySelectorAll('.filter-btn').forEach(button => {
 
 
 // ===========================
-// Validation du Formulaire de Contact
+// Contact Form Validation
 // ===========================
 (function() {
     'use strict';
 
+    // Get the contact form element
     const form = document.getElementById('contactForm');
     
     if (form) {
         form.addEventListener('submit', function(event) {
+
+            // Prevent form submission
             event.preventDefault();
             event.stopPropagation();
 
-            // Validation personnalisée pour le téléphone
+            // Custom validation for the phone number
             const telInput = document.getElementById('phone');
             const telRegex = /^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/;
             
             if (telInput && !telRegex.test(telInput.value)) {
-                telInput.setCustomValidity('Veuillez entrer un numéro de téléphone valide (format français).');
+                telInput.setCustomValidity('Please enter a valid French phone number.');
             } else if (telInput) {
                 telInput.setCustomValidity('');
             }
 
-            // Vérifier la validité du formulaire
+            // Check the overall form validity
             if (!form.checkValidity()) {
                 form.classList.add('was-validated');
             } else {
-                // Formulaire valide
+                // Form is valid
                 form.classList.add('was-validated');
                 
-                // Message de succès
+                // Create and display a success message
                 const successMessage = document.createElement('div');
                 successMessage.className = 'alert alert-success mt-3';
                 successMessage.innerHTML = '<strong>Thank you!</strong> Your message has been sent successfully. I will get back to you soon.';
                 
                 form.parentNode.insertBefore(successMessage, form.nextSibling);
                 
-                // Réinitialiser le formulaire
+                // Reset the form
                 form.reset();
                 form.classList.remove('was-validated');
                 
-                // Retirer le message après 5 secondes
+                // Remove the success message after 5 seconds
                 setTimeout(() => {
                     successMessage.remove();
                 }, 5000);
             }
         });
 
-        // Validation en temps réel
+        // Real-time validation
         const inputs = form.querySelectorAll('input, textarea, select');
         inputs.forEach(input => {
+
             input.addEventListener('blur', function() {
                 if (this.checkValidity()) {
                     this.classList.remove('is-invalid');
