@@ -33,7 +33,10 @@ Bonjour je me nomme Lin Mathias et je vous presente mon projet de portfolio pers
 ![Maquette desktop](./asset_README/Figma_portfolio_desktop.png)
 ![Maquette mobile](./asset_README/Figma_portfolio_mobile.png)
 
+
 Cette maquette est sobre/élégant et professionnel d'où mon choix vers cette maquette
+
+
 ---
 
 ## Technologies utilisées
@@ -73,7 +76,9 @@ cd CSS-Framework
 ou télécharger tout simplement tous les fichiers dans un meme dossier 
 
 2. **Installer les dépendances npm**
-Sur vsCode dans le dossier ou le projet se trouve dans le terminal faite :
+
+
+Sur vsCode dans le dossier où le projet se trouve dans le terminal faite :
 ```bash
 npm install
 ```
@@ -85,7 +90,7 @@ npm list
 ```
 Vous devriez voir :
 ```
-Chemin relatif
+Chemin absolu
 └── bootstrap@5.3.8
 ```
 
@@ -96,18 +101,19 @@ Chemin relatif
 - Clic droit sur `index.html` → "Open with Live Server"
 - Le site s'ouvre sur votre navigateur web
 
-Puis ouvrir `http://localhost:8000`
 
 **Option B : Directement dans le navigateur**
 - Double-cliquer sur `index.html` pour l'ouvrir sur le navigateur
 
 ---
 
-##s Déploiement en ligne
+## Déploiement en ligne
 
 ### Lien du site : [https://wendybest912.github.io/CSS-Framework/](https://wendybest912.github.io/CSS-Framework/)
 
-### Méthode de déploiement
+### Méthode de déploiement:
+
+
 Le site est hébergé sur **GitHub Pages**
 ---
 
