@@ -75,24 +75,6 @@ cd CSS-Framework
 
 ou télécharger tout simplement tous les fichiers dans un meme dossier 
 
-2. **Installer les dépendances npm**
-
-
-Sur vsCode dans le dossier où le projet se trouve dans le terminal faite :
-```bash
-npm install
-```
-> Cette commande installera Bootstrap localement dans `node_modules/` grace au json
-
-3. **Vérifier les dépendances**
-```bash
-npm list
-```
-Vous devriez voir :
-```
-Chemin absolu
-└── bootstrap@5.3.8
-```
 
 4. **Lancer le projet**
 
