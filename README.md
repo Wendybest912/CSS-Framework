@@ -61,13 +61,12 @@ Cette maquette est sobre/élégant et professionnel d'où mon choix vers cette m
 ## Installation et lancement en local
 
 ### Prérequis
-- **Node.js** et **npm** installés
 - Un navigateur web (Chrome, Firefox, Safari, Edge, ...)
 - Un éditeur de code (VS Code recommandé car plus simple)
 
 ### Étapes d'installation
 
-1. **Cloner.copier le dépôt Git**
+1. **Dans un dossier cloner/copier le dépôt Git**
 ```bash
 git clone https://github.com/Wendybest912/CSS-Framework.git
 cd CSS-Framework
@@ -76,18 +75,28 @@ cd CSS-Framework
 ou télécharger tout simplement tous les fichiers dans un meme dossier 
 
 
-4. **Lancer le projet**
+2. **Lancer le projet**
 
-**Option A : Avec Live Server (recommandé)**
+**Option A : en ligne de commande**
+```bash
+start index.html
+```
+
+**Option B : Avec Live Server**
 - Installer l'extension "Live Server" dans VS Code
 - Clic droit sur `index.html` → "Open with Live Server"
 - Le site s'ouvre sur votre navigateur web
 
 
-**Option B : Directement dans le navigateur**
+**Option C : Directement dans le navigateur**
 - Double-cliquer sur `index.html` pour l'ouvrir sur le navigateur
 
+
+>  Note : Aucune installation de dépendances n'est nécessaire car Bootstrap et Font Awesome sont chargés via CDN.
+
+
 ---
+
 
 ## Déploiement en ligne
 
@@ -96,21 +105,27 @@ ou télécharger tout simplement tous les fichiers dans un meme dossier
 ### Méthode de déploiement:
 
 
-Le site est hébergé sur **GitHub Pages**
+>  Le site est hébergé sur **GitHub Pages**
+
+
 ---
+
 
 ## Contact
 
 **Email :** lin.mathias@gmail.com  
-**LinkedIn :** [linkedin.com/in/wendybest](https://www.linkedin.com/in/mathias-lin-027695356/)  
+**LinkedIn :** [https://www.linkedin.com/in/mathias-lin-027695356/](https://www.linkedin.com/in/mathias-lin-027695356/)  
 **GitHub :** [github.com/Wendybest912](https://github.com/Wendybest912/CSS-Framework)  
 **Portfolio :** [wendybest912.github.io/CSS-Framework](https://wendybest912.github.io/CSS-Framework/)
 
+
 ---
+
 
 ## Licence
 
 Ce projet est réalisé dans un cadre pédagogique pour l'école Hexagone pour la formation 2FCSS.  
 © 2025 Mathias Lin - Tous droits réservés.
+
 
 ---
