@@ -3,7 +3,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 
 // ===========================
-// Smooth Scroll
+// Smooth scroll
 // ===========================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -61,7 +61,7 @@ document.querySelectorAll('.filter-btn').forEach(button => {
 
 
 // ===========================
-// Contact Form Validation
+// Contact form validation
 // ===========================
 (function() {
     'use strict';
